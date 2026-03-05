@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo | Automóveis Gold</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏎️</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">🏎️</div>
+      <span class="brand-text">Automóveis Gold</span>
+    </a>
+    <ul class="navbar-nav" id="navMenu">
+      <li><a href="index.html" class="nav-link">Início</a></li>
+      <li><a href="index.html#destaques" class="nav-link">Destaques</a></li>
+      <li><a href="index.html#categorias" class="nav-link">Categorias</a></li>
+      <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+      <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+      <li><a href="catalogo.html" class="btn btn-nav">Catálogo</a></li>
+    </ul>
+    <button class="navbar-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="catalog-page">
+    <!-- HERO CATÁLOGO -->
+    <div class="catalog-hero">
+      <div class="section-tag">✦ Automóveis Gold</div>
+      <h1 class="section-title">Nosso <span>Catálogo</span> Completo</h1>
+      <p>Explore todos os nossos veículos exclusivos disponíveis</p>
+    </div>
+
+    <!-- LAYOUT CATÁLOGO -->
+    <div class="catalog-layout">
+
+      <!-- FILTROS -->
+      <aside class="filters-panel">
+        <div class="filters-title">🔧 Filtros</div>
+
+        <!-- Tipo -->
+        <div class="filter-group">
+          <div class="filter-label">Tipo de Veículo</div>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="radio" name="tipo" value="" checked /> Todos os Tipos
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="tipo" value="Esportivo" /> Esportivos
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="tipo" value="Sedan" /> Sedans
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="tipo" value="SUV" /> SUVs
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="tipo" value="Cupê" /> Cupês
+            </label>
+          </div>
+        </div>
+
+        <!-- Marca -->
+        <div class="filter-group">
+          <div class="filter-label">Marca</div>
+          <div class="filter-options" id="marcasFilter">
+            <label class="filter-option">
+              <input type="radio" name="marca" value="" checked /> Todas as Marcas
+            </label>
+          </div>
+        </div>
+
+        <!-- Combustível -->
+        <div class="filter-group">
+          <div class="filter-label">Combustível</div>
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="radio" name="combustivel" value="" checked /> Todos
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="combustivel" value="Gasolina" /> Gasolina
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="combustivel" value="Elétrico" /> Elétrico
+            </label>
+            <label class="filter-option">
+              <input type="radio" name="combustivel" value="Híbrido" /> Híbrido
+            </label>
+          </div>
+        </div>
+
+        <!-- Preço -->
+        <div class="filter-group">
+          <div class="filter-label">Preço Máximo</div>
+          <div class="price-range">
+            <input type="range" class="price-slider" id="priceSlider"
+              min="100000" max="3000000" step="50000" value="3000000" />
+            <div class="price-display" id="priceDisplay">Até R$ 3.000.000</div>
+          </div>
+        </div>
+
+        <!-- Somente Destaques -->
+        <div class="filter-group">
+          <div class="filter-label">Exibição</div>
+          <label class="filter-option">
+            <input type="checkbox" id="soDestaques" /> Somente Destaques
+          </label>
+        </div>
+
+        <button class="btn btn-outline" style="width:100%; justify-content:center;" onclick="limparFiltros()">
+          ✕ Limpar Filtros
+        </button>
+      </aside>
+
+      <!-- GRID PRINCIPAL -->
+      <main class="catalog-main">
+        <div class="catalog-toolbar">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Buscar por nome, marca, modelo..." />
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <div class="results-count">
+              <span id="countSpan">0</span> veículo(s)
+            </div>
+            <select class="sort-select" id="sortSelect">
+              <option value="destaque">Destaques Primeiro</option>
+              <option value="preco_asc">Menor Preço</option>
+              <option value="preco_desc">Maior Preço</option>
+              <option value="ano_desc">Mais Novo</option>
+              <option value="km_asc">Menor Km</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="vehicles-grid" id="catalogGrid">
+          <div class="loading"><div class="spinner"></div> Carregando veículos...</div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">🏎️ Automóveis Gold</div>
+        <p class="footer-desc">Referência em automóveis de luxo e alto desempenho no Brasil.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <div class="footer-links">
+          <a href="index.html">Início</a>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="index.html#sobre">Sobre</a>
+          <a href="index.html#contato">Contato</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <div class="footer-links">
+          <a href="catalogo.html?tipo=Esportivo">Esportivos</a>
+          <a href="catalogo.html?tipo=Sedan">Sedans</a>
+          <a href="catalogo.html?tipo=SUV">SUVs</a>
+          <a href="catalogo.html?tipo=Cupê">Cupês</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <div class="footer-links">
+          <a href="#">(11) 9 9999-8888</a>
+          <a href="#">contato@automoveisgold.com.br</a>
+          <a href="#">Av. Paulista, 1000 — SP</a>
+          <a href="admin.html">Administração</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 <span>Automóveis Gold</span>. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- MODAL DETALHES -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Veículo</h2>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <span class="toast-icon" id="toastIcon">✓</span>
+    <span id="toastMsg">Mensagem</span>
+  </div>
+
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

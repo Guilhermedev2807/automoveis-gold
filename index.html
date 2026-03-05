@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automóveis Gold | Luxo em Movimento</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏎️</text></svg>" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">🏎️</div>
+      <span class="brand-text">Automóveis Gold</span>
+    </a>
+    <ul class="navbar-nav" id="navMenu">
+      <li><a href="#inicio" class="nav-link active">Início</a></li>
+      <li><a href="#destaques" class="nav-link">Destaques</a></li>
+      <li><a href="#categorias" class="nav-link">Categorias</a></li>
+      <li><a href="#sobre" class="nav-link">Sobre</a></li>
+      <li><a href="#contato" class="nav-link">Contato</a></li>
+      <li><a href="catalogo.html" class="btn btn-nav">Ver Catálogo</a></li>
+    </ul>
+    <button class="navbar-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✦ Concessionária Premium ✦</div>
+      <h1 class="hero-title">
+        Experimente o<br />
+        <span class="gold">Luxo em Movimento</span>
+      </h1>
+      <p class="hero-subtitle">
+        Descubra nossa coleção exclusiva de automóveis de alto desempenho.
+        Qualidade, elegância e velocidade em um só lugar.
+      </p>
+      <div class="hero-actions">
+        <a href="catalogo.html" class="btn btn-gold btn-lg">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Explorar Catálogo
+        </a>
+        <a href="#sobre" class="btn btn-outline btn-lg">Conheça a Gold</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat-item">
+        <div class="hero-stat-number" id="statVeiculos">0+</div>
+        <div class="hero-stat-label">Veículos</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-number">15+</div>
+        <div class="hero-stat-label">Marcas Premium</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-number">5★</div>
+        <div class="hero-stat-label">Avaliação</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-number">10+</div>
+        <div class="hero-stat-label">Anos de Mercado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span>Ferrari</span><span>✦</span>
+      <span>Lamborghini</span><span>✦</span>
+      <span>Porsche</span><span>✦</span>
+      <span>Bentley</span><span>✦</span>
+      <span>Mercedes-AMG</span><span>✦</span>
+      <span>BMW M</span><span>✦</span>
+      <span>Maserati</span><span>✦</span>
+      <span>Audi RS</span><span>✦</span>
+      <span>Tesla</span><span>✦</span>
+      <span>Land Rover</span><span>✦</span>
+      <span>Ferrari</span><span>✦</span>
+      <span>Lamborghini</span><span>✦</span>
+      <span>Porsche</span><span>✦</span>
+      <span>Bentley</span><span>✦</span>
+      <span>Mercedes-AMG</span><span>✦</span>
+      <span>BMW M</span><span>✦</span>
+      <span>Maserati</span><span>✦</span>
+      <span>Audi RS</span><span>✦</span>
+      <span>Tesla</span><span>✦</span>
+      <span>Land Rover</span><span>✦</span>
+    </div>
+  </div>
+
+  <!-- DESTAQUES -->
+  <section id="destaques">
+    <div class="section-header">
+      <div class="section-tag">✦ Seleção Especial</div>
+      <h2 class="section-title">Veículos em <span>Destaque</span></h2>
+      <p class="section-subtitle">Os automóveis mais exclusivos da nossa coleção, selecionados especialmente para você.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="vehicles-grid" id="destaquesGrid">
+      <div class="loading"><div class="spinner"></div> Carregando veículos...</div>
+    </div>
+    <div style="text-align:center; margin-top: 48px;">
+      <a href="catalogo.html" class="btn btn-outline btn-lg">Ver Todos os Veículos</a>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section id="categorias" style="background: var(--dark-1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-header">
+      <div class="section-tag">✦ Explore por Tipo</div>
+      <h2 class="section-title">Nossas <span>Categorias</span></h2>
+      <p class="section-subtitle">Encontre o veículo ideal para o seu estilo de vida.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="categories-grid">
+      <a href="catalogo.html?tipo=Esportivo" class="category-card">
+        <div class="category-icon">🏎️</div>
+        <div class="category-name">Esportivos</div>
+        <div class="category-count">Ferrari, Lamborghini, Porsche</div>
+      </a>
+      <a href="catalogo.html?tipo=Sedan" class="category-card">
+        <div class="category-icon">🚗</div>
+        <div class="category-name">Sedans</div>
+        <div class="category-count">BMW, Audi, Mercedes, Tesla</div>
+      </a>
+      <a href="catalogo.html?tipo=SUV" class="category-card">
+        <div class="category-icon">🚙</div>
+        <div class="category-name">SUVs</div>
+        <div class="category-count">Range Rover, Porsche, BMW</div>
+      </a>
+      <a href="catalogo.html?tipo=Cupê" class="category-card">
+        <div class="category-icon">🚘</div>
+        <div class="category-name">Cupês</div>
+        <div class="category-count">Bentley, Maserati</div>
+      </a>
+      <a href="catalogo.html" class="category-card">
+        <div class="category-icon">⚡</div>
+        <div class="category-name">Elétricos</div>
+        <div class="category-count">Tesla e mais</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="about-grid">
+      <div class="about-image fade-in">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80" alt="Porsche na showroom" loading="lazy" />
+      </div>
+      <div class="fade-in-delay">
+        <div class="about-tag">✦ Nossa História</div>
+        <h2 class="about-title">A <span style="color:var(--gold)">Excelência</span> em Automóveis de Luxo</h2>
+        <p class="about-text">
+          Há mais de 10 anos, a <strong style="color:var(--gold)">Automóveis Gold</strong> é referência no mercado premium brasileiro.
+          Nossa missão é conectar amantes de automóveis excepcionais com veículos que transcendem o ordinário.
+        </p>
+        <p class="about-text">
+          Cada veículo em nosso portfólio passa por uma rigorosa inspeção de qualidade antes de ser disponibilizado
+          para nossos clientes. Garantimos transparência, segurança e a melhor experiência de compra.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feature-icon">🔍</div>
+            <div class="feature-text">
+              <h4>Inspeção Completa</h4>
+              <p>Todos os veículos passam por revisão técnica de 150 pontos.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon">📋</div>
+            <div class="feature-text">
+              <h4>Documentação Garantida</h4>
+              <p>Toda documentação em dia, histórico completo do veículo.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon">💎</div>
+            <div class="feature-text">
+              <h4>Financiamento Premium</h4>
+              <p>Condições especiais com as melhores taxas do mercado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" style="background: var(--dark-1); border-top: 1px solid var(--border);">
+    <div class="section-header">
+      <div class="section-tag">✦ Fale Conosco</div>
+      <h2 class="section-title">Entre em <span>Contato</span></h2>
+      <p class="section-subtitle">Nossa equipe está pronta para atendê-lo com exclusividade.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Endereço</div>
+            <div class="contact-value">Av. Paulista, 1000 — São Paulo, SP</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Telefone</div>
+            <div class="contact-value">(11) 9 9999-8888</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">E-mail</div>
+            <div class="contact-value">contato@automoveisgold.com.br</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Horário</div>
+            <div class="contact-value">Seg–Sex: 9h–18h | Sáb: 9h–13h</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" onsubmit="return enviarContato(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nome *</label>
+            <input type="text" class="form-input" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Telefone</label>
+            <input type="tel" class="form-input" placeholder="(11) 9 9999-9999" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">E-mail *</label>
+          <input type="email" class="form-input" placeholder="seu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Interesse</label>
+          <select class="form-select">
+            <option value="">Selecione um veículo ou categoria</option>
+            <option>Esportivos</option>
+            <option>Sedans</option>
+            <option>SUVs</option>
+            <option>Cupês</option>
+            <option>Financiamento</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mensagem *</label>
+          <textarea class="form-textarea" placeholder="Como podemos ajudá-lo?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center;">
+          Enviar Mensagem
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">🏎️ Automóveis Gold</div>
+        <p class="footer-desc">
+          Referência em automóveis de luxo e alto desempenho no Brasil.
+          Qualidade, transparência e exclusividade desde 2014.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Instagram">📷</a>
+          <a href="#" class="social-link" title="Facebook">📘</a>
+          <a href="#" class="social-link" title="WhatsApp">💬</a>
+          <a href="#" class="social-link" title="YouTube">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <div class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#destaques">Destaques</a>
+          <a href="#categorias">Categorias</a>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="#sobre">Sobre</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <div class="footer-links">
+          <a href="catalogo.html?tipo=Esportivo">Esportivos</a>
+          <a href="catalogo.html?tipo=Sedan">Sedans</a>
+          <a href="catalogo.html?tipo=SUV">SUVs</a>
+          <a href="catalogo.html?tipo=Cupê">Cupês</a>
+          <a href="catalogo.html">Ver Todos</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Serviços</h4>
+        <div class="footer-links">
+          <a href="#">Financiamento</a>
+          <a href="#">Avaliação</a>
+          <a href="#">Test Drive</a>
+          <a href="#">Revisão</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2024 <span>Automóveis Gold</span>. Todos os direitos reservados.</div>
+      <div class="footer-copy">Desenvolvido com ❤️ para amantes de automóveis</div>
+    </div>
+  </footer>
+
+  <!-- MODAL DETALHES -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Veículo</h2>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <span class="toast-icon" id="toastIcon">✓</span>
+    <span id="toastMsg">Mensagem</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
